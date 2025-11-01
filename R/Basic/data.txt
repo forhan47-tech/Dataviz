@@ -1,0 +1,4 @@
+id	name	score	passed
+101	A	90.5	TRUE
+102	B	85	TRUE
+103	C	88.2	FALSE
