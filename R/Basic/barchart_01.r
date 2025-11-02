@@ -8,7 +8,7 @@
 cyl_freq <- table(mtcars$cyl)
 
 # Step 2: Generate barplot
-barplot(height     = cyl_freq,                           # Bar heights
+barplot(height = cyl_freq,                               # Bar heights
   main       = "Car Count by Cylinder",                  # Main title
   sub        = "Data: mtcars dataset",                   # Subtitle
   xlab       = "Number of Cylinders",                    # X-axis label

@@ -10,6 +10,7 @@ library(ggplot2)
 # Step 1: Generate histogram with bin diagnostics
 ggplot(mtcars, aes(x = mpg)) +
   geom_histogram(
+    bins    = 10,                            # Number of bins
     binwidth = 1,                             # Bin width
     fill     = "steelblue",                   # Fill color
     color    = "black",                       # Border color

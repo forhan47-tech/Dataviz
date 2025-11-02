@@ -1,28 +1,35 @@
 # ─────────────────────────────────────────────────────────────
-# 📦 ggplot2 Boxplot Diagnostic Script
+# 📦 Base R Boxplot Diagnostic Script
 # Author: NAIMUDDIN
 # Purpose: Visualize MPG by cylinder with manifest logging and outlier detection
 # ─────────────────────────────────────────────────────────────
 
-# Load ggplot2 library
-library(ggplot2)
+# Step 1: Vertical boxplot (standard)
+boxplot(mpg ~ factor(cyl),                          # MPG grouped by cylinder
+  data      = mtcars,                                    # Source dataset
+  main      = "MPG by Cylinder",                         # Plot title
+  sub       = "Data: mtcars dataset",                    # Subtitle
+  xlab      = "Cylinders",                               # X-axis label
+  ylab      = "Miles per Gallon",                        # Y-axis label
+  col       = c("lightblue", "lightgreen", "lightpink"), # Fill colors
+  border    = "darkblue",                                # Border color
+  varwidth  = TRUE,                                 # Box width ∝ group size
+  outline   = TRUE,                                      # Show outliers
+  names     = c("4 cyl", "6 cyl", "8 cyl")               # Custom group labels
+)
 
-# Step 1: Generate boxplot with notches and outlier diagnostics
-ggplot(data = mtcars, aes(x = factor(cyl), y = mpg)) +
-  geom_boxplot(
-    notch           = TRUE,         # Show notch for median CI
-    fill            = "orange",     # Box fill color
-    color           = "darkblue",   # Border color
-    outlier.colour  = "red",        # Outlier color
-    outlier.shape   = 8,            # Outlier shape (asterisk)
-    outlier.size    = 2.5,          # Outlier size
-    coef            = 1.5           # Whisker length multiplier
-  ) +
-  labs(
-    title    = "MPG by Cylinder",                           # Plot title
-    subtitle = "Data: mtcars dataset",                      # Subtitle
-    x        = "Cylinders",                                 # X-axis label
-    y        = "Miles per Gallon",                          # Y-axis label
-    caption  = "Boxplot with notches and outlier diagnostics" # Caption
-  ) +
-  theme_minimal()                                           # Minimal theme
+# Step 2: Horizontal notched boxplot
+boxplot(mpg ~ cyl,                                 # MPG grouped by cylinder
+  data       = mtcars,                                    # Source dataset
+  main       = "MPG by Cylinder (Horizontal Notched)",    # Plot title
+  sub        = "Data: mtcars dataset",                    # Subtitle
+  xlab       = "Miles per Gallon",                        # X-axis label
+  ylab       = "Cylinders",                               # Y-axis label
+  col        = c("lightyellow", "lightgray", "lightgreen"), # Fill colors
+  border     = "darkred",                                 # Border color
+  notch      = TRUE,                                # Show notches for median CI
+  varwidth   = TRUE,                                # Box width ∝ group size
+  outline    = TRUE,                                      # Show outliers
+  names      = c("4 cyl", "6 cyl", "8 cyl"),              # Custom group labels
+  horizontal = TRUE                                 # Horizontal orientation
+)

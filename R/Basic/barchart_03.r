@@ -1,25 +1,23 @@
 # ─────────────────────────────────────────────────────────────
-# 🔁 ggplot2 Grouped Bar Plot Diagnostic Script
+# 📊 Base R Grouped Barplot Diagnostic Script (mtcars)
 # Author: NAIMUDDIN
-# Purpose: Compare cylinder and gear counts using ggplot2
+# Purpose: Compare cylinder and gear counts using grouped barplot
 # ─────────────────────────────────────────────────────────────
 
-# Load ggplot2 library
-library(ggplot2)
+# Step 1: Create contingency table of cylinder vs gear
+cyl_gear_table <- table(mtcars$cyl, mtcars$gear)
 
-# Step 1: Generate grouped bar plot
-ggplot(mtcars, aes(x = factor(cyl), fill = factor(gear))) +
-  geom_bar(
-    position = "dodge",       # Grouped bars side-by-side
-    color    = "black",       # Border color
-    width    = 0.7            # Bar width
-  ) +
-  labs(
-    title    = "Cylinder vs Gear Count",                          # Plot title
-    subtitle = "Grouped by Gear | Data: mtcars dataset",          # Subtitle
-    x        = "Cylinders",                                       # X-axis label
-    y        = "Frequency",                                       # Y-axis label
-    fill     = "Gear",                                            # Legend title
-    caption  = "Grouped barplot using position_dodge"             # Caption
-  ) +
-  theme_minimal()                                                # Minimal theme
+# Step 2: Generate grouped barplot
+barplot(height = cyl_gear_table,                    # Matrix of counts
+  main        = "Grouped Barplot: Cylinders vs Gears",   # Plot title
+  sub         = "Data: mtcars dataset",                  # Subtitle
+  xlab        = "Gear Count",                            # X-axis label
+  ylab        = "Frequency",                             # Y-axis label
+  names.arg   = colnames(cyl_gear_table),                # Bar labels
+  col         = c("orange", "lightblue", "lightgreen"),  # Bar colors
+  border      = "black",                                 # Border color
+  horiz       = FALSE,                                   # Vertical bars
+  beside      = TRUE,                                    # Separate bars
+  space       = 0.2,                                     # Space between bars
+  width       = 1                                        # Bar width
+)

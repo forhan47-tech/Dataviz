@@ -19,4 +19,5 @@ dim(df)         # Dimensions
 names(df)       # Column names
 colnames(df)    # Column names
 rownames(df)    # Row names
+subset(df, score > 86)  # Subset rows where score > 86
 table(df$passed)  # Frequency table of 'passed' column

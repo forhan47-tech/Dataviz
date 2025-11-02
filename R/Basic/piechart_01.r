@@ -8,8 +8,7 @@
 cyl_freq <- table(mtcars$cyl)
 
 # Step 2: Generate pie chart
-pie(
-  x        = cyl_freq,                                 # Data vector
+pie(cyl_freq,                                          # Data vector
   labels   = names(cyl_freq),                          # Slice labels
   main     = "Car Distribution by Cylinder",           # Plot title
   col      = c("orange", "lightblue", "lightgreen"),   # Slice colors
