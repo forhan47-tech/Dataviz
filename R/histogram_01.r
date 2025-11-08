@@ -12,9 +12,12 @@ h <- hist(mtcars$mpg,                         # Data: Miles per Gallon
   ylab     = "Frequency",                     # Y-axis label
   xlim     = range(mtcars$mpg),               # X-axis limits
   ylim     = NULL,                            # Auto Y-axis limits
-  breaks   = 10,                              # Number of bins
-  col      = "lightblue",                   # Fill color
-  border   = "black",                       # Border color
+  breaks   = 20,                              # Number of bins
+  col      = "lightblue",                     # Fill color
+  border   = "black",                         # Border color
   labels   = TRUE,                            # Show bin counts
-  density  = NULL                             # No shading pattern
+  freq     = TRUE                             # Frequency counts
 )
+
+# Step 2: Overlay density curve
+lines(density(mtcars$mpg), col = "red", lwd = 2)

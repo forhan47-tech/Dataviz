@@ -14,9 +14,7 @@ df <- data.frame(
 )
 
 # Step 2: Compute percentage labels for each category
-df$percent <- paste0(
-  round(df$value / sum(df$value) * 100), "%"
-)
+df$percent <- round(df$value / sum(df$value) * 100)
 
 # Step 3: Generate pie chart with percentage diagnostics
 ggplot(df, aes(x = "", y = value, fill = category)) +

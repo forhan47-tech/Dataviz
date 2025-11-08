@@ -6,12 +6,8 @@ df <- data.frame(
   passed = c(TRUE, TRUE, FALSE)
 )
 
-# Modify data frame
-df[2, 3] <- 87.5
-df$score[2] <- 87.5
-df$grade <- c("A", "B", "B")
-df$passed <- df$score >= 86
+# Subset
+subset(df, score > 86)
 
-# Print data frame
-print(df)
-print(df$grade[1])
+# Table
+table(df$passed)

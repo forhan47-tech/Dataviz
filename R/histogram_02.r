@@ -1,33 +1,35 @@
 # ─────────────────────────────────────────────────────────────
-# 📊 ggplot2 Histogram Diagnostic Script
+# 📊 ggplot2 Histogram Diagnostic Script (Updated for ggplot2 3.4.0)
 # Author: NAIMUDDIN
 # Purpose: Visualize MPG distribution with manifest logging and bin diagnostics
 # ─────────────────────────────────────────────────────────────
 
-# Load ggplot2 library
 library(ggplot2)
 
-# Step 1: Generate histogram with bin diagnostics
 ggplot(mtcars, aes(x = mpg)) +
   geom_histogram(
-    bins    = 10,                            # Number of bins
-    binwidth = 1,                             # Bin width
-    fill     = "steelblue",                   # Fill color
-    color    = "black",                       # Border color
-    boundary = 0                              # Bin boundary alignment
+    binwidth = 1,                            # Bin width only
+    fill     = "steelblue",                  # Fill color
+    color    = "black",                      # Border color
+    boundary = 0                             # Bin boundary alignment
+  ) +
+  geom_density(
+    aes(y = after_stat(count)),   # Scale density to match histogram counts
+    color = "red",                           # Density curve color
+    linewidth = 1.2                          # Updated line width
   ) +
   geom_text(
-    stat   = "bin",                           # Bin-wise annotation
-    aes(label = after_stat(count)),           # Show count per bin
-    vjust  = -0.5,                            # Position above bars
-    size   = 3,                               # Text size
-    color  = "darkgray"                       # Text color
+    stat   = "bin",                          # Bin-wise annotation
+    aes(label = after_stat(count)),          # Updated syntax
+    vjust  = -0.5,                           # Position above bars
+    size   = 3,                              # Text size
+    color  = "darkgray"                      # Text color
   ) +
   labs(
-    title    = "MPG Distribution",            # Plot title
-    subtitle = "Data: mtcars dataset",        # Subtitle
-    x        = "Miles per Gallon",            # X-axis label
-    y        = "Frequency",                   # Y-axis label
-    caption  = "Histogram with bin diagnostics" # Caption
+    title    = "MPG Distribution",
+    subtitle = "Data: mtcars dataset",
+    x        = "Miles per Gallon",
+    y        = "Frequency",
+    caption  = "Histogram with bin diagnostics"
   ) +
-  theme_minimal()                             # Minimal theme
+  theme_minimal()

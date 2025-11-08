@@ -1,4 +1,4 @@
-# Create a sample data frame
+# Basic R Script: Data Manipulation
 df <- data.frame(
   id = c(101, 102, 103),
   name = c("A", "B", "C"),

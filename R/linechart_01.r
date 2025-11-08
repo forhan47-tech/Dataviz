@@ -1,32 +1,34 @@
 # ─────────────────────────────────────────────────────────────
-# 📈 Base R Lineplot Diagnostic Script
+# 📈 Base R Lineplot Diagnostic Script (mtcars)
 # Author: NAIMUDDIN
-# Purpose: Visualize Monthly Sales Trend
+# Purpose: Visualize MPG trend across cars
 # ─────────────────────────────────────────────────────────────
 
-# Create sample data
-month <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun")
-sales <- c(120, 135, 150, 160, 155, 170)
+# Step 0: Define car index
+car_index <- seq_along(mtcars$mpg)  # Sequence from 1 to number of cars
 
-# Create a data frame
-df <- data.frame(month, sales)
+# Step 1: Generate lineplot of MPG across car index
+plot(car_index, mtcars$mpg,         # X-axis: car index, Y-axis: MPG
+  type  = "o",                      # Line and points
+  main  = "MPG Trend Across Cars",  # Plot title
+  sub   = "Data: mtcars dataset",   # Subtitle
+  xlab  = "Car Index",              # X-axis label
+  ylab  = "Miles per Gallon",       # Y-axis label
+  col   = "blue",                   # Line color
+  lwd   = 2,                        # Line width
+  pch   = 19,                       # Point type (solid circle)
+  cex   = 1.5,                      # Point size
+  xlim  = c(1, nrow(mtcars)),       # X-axis limits
+  ylim  = range(mtcars$mpg)         # Y-axis limits
+)
 
-# Convert month to numeric positions for plotting
-month_pos <- seq_along(month)
+# Step 2: Annotate each point with car name
+text(car_index, mtcars$mpg,         # X-Y coordinates
+  labels  = rownames(mtcars),       # Car names
+  pos     = 3,                      # Above each point
+  cex     = 0.7,                    # Text size
+  col     = "darkgray"              # Annotation color
+)
 
-# Generate line plot
-plot(month_pos, df$sales,
-     type = "o",                      # Overplotted points and lines
-     xaxt = "n",                     # Suppress x-axis
-     main = "Monthly Sales Trend",
-     xlab = "Month",
-     ylab = "Sales (Units)",
-     col = "darkgreen",
-     pch = 16,
-     lwd = 2)
-
-# Add custom x-axis labels
-axis(1, at = month_pos, labels = df$month)
-
-# Add grid for clarity
+# Step 3: Add grid lines for better readability
 grid()

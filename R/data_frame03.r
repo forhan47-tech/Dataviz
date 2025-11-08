@@ -1,4 +1,4 @@
-# Create a data frame
+# Basic R Script: Data Frames
 df <- data.frame(
   id = c(101, 102, 103),
   name = c("A", "B", "C"),
@@ -6,18 +6,19 @@ df <- data.frame(
   passed = c(TRUE, TRUE, FALSE)
 )
 
-# Summary of the data frame
+# Display first and last rows
 head(df)        # First few rows
 head(df, 2)     # First 2 rows
 tail(df)        # Last few rows
 tail(df, 2)     # Last 2 rows
+
+# Data frame structure and summary
 str(df)         # Structure
 summary(df)     # Summary stats
 nrow(df)        # Row count
 ncol(df)        # Column count
 dim(df)         # Dimensions
+
+# Column and row names
 names(df)       # Column names
-colnames(df)    # Column names
 rownames(df)    # Row names
-subset(df, score > 86)  # Subset rows where score > 86
-table(df$passed)  # Frequency table of 'passed' column

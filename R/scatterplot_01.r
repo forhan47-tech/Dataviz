@@ -12,7 +12,7 @@ plot(mtcars$wt, mtcars$mpg,
   ylab  = "Miles per Gallon",                 # Y-axis label
   xlim  = range(mtcars$wt),                   # X-axis limits
   ylim  = range(mtcars$mpg),                  # Y-axis limits
-  col   = "blue",                           # Point color
+  col   = factor(mtcars$cyl),              # Color by number of cylinders
   pch   = 19,                                 # Solid circle
   cex   = 1.5                                 # Point size
 )

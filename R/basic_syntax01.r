@@ -1,17 +1,17 @@
-# This is a basic R script
-val <- 5
-str <- "R Language"
-flag <- TRUE
-comp <- 3 + 4i
+# ================================
+# Basic Script: Assignment & Comments
+# ================================
 
-# Print variables
-print(val)
-print(str)
-print(flag)
-print(comp)
+# 1.2.1 Assignment
+x <- 10
+y <- 5
+z <- x + y
 
-# Check types
-print(class(val))   # Numeric
-print(class(str))   # Character
-print(class(flag))  # Logical
-print(class(comp))  # Complex
+# Print results
+print(x)
+print(y)
+print(z)
+
+# Multiple assignment
+a <- b <- 100
+paste("a =", a, "b =", b)

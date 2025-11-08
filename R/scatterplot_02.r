@@ -10,7 +10,7 @@ library(ggplot2)
 # Step 1: Generate scatter plot with regression and annotation
 ggplot(data = mtcars, aes(x = wt, y = mpg)) +
   geom_point(
-    color = "blue", size = 2, shape = 16        # Data points
+    color = mtcars$cyl, size = 3, shape = 16        # Data points
   ) +
   geom_smooth(
     method = "lm", se = FALSE, color = "red"    # Regression line

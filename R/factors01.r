@@ -1,4 +1,4 @@
-# Create a factor
+# Basic R Script: Factors
 ft <- factor(c("apple", "banana", "apple", "orange", "banana", "apple"))
 
 # Analyze the factor

@@ -1,4 +1,4 @@
-# Create a data frame
+# Basic R Script: Data Frames
 df <- data.frame(
   id = c(101, 102, 103),
   name = c("A", "B", "C"),

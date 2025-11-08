@@ -1,28 +1,37 @@
 # ─────────────────────────────────────────────────────────────
 # 📈 ggplot2 Line Chart Diagnostic Script
 # Author: NAIMUDDIN
-# Purpose: Visualize Monthly Sales Trend
+# Purpose: Visualize MPG trend across car index with manifest logging
 # ─────────────────────────────────────────────────────────────
 
-# Load ggplot2
+# Load ggplot2 library
 library(ggplot2)
 
-# Create sample data
-month <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun")
-sales <- c(120, 135, 150, 160, 155, 170)
-df <- data.frame(month, sales)
+# Step 1: Add index for plotting
+mtcars$car_index <- seq_along(mtcars$mpg)  # Sequence from 1 to number of cars
 
-# Ensure month is an ordered factor for correct x-axis order
-df$month <- factor(df$month, levels = month)
-
-# Generate line plot using ggplot2
-ggplot(df, aes(x = month, y = sales, group = 1)) +
-  geom_line(color = "darkgreen", size = 1.2) +     # Line
-  geom_point(color = "darkgreen", size = 3) +      # Points
-  labs(
-    title    = "Monthly Sales Trend",
-    x        = "Month",
-    y        = "Sales (Units)",
-    caption  = "Line plot using ggplot2"
+# Step 2: Generate line chart with point and label diagnostics
+ggplot(mtcars, aes(x = car_index, y = mpg)) +
+  geom_line(
+    color     = "steelblue",                      # Line color
+    lwd       = 1.5                                 # Line width
   ) +
-  theme_minimal()
+  geom_point(
+    color = "darkorange",                         # Point color
+    size  = 3,                                    # Point size
+    shape = 16                                    # Solid circle
+  ) +
+  geom_text(
+    aes(label = rownames(mtcars)),          # Car names as labels
+    vjust = -0.8,                                 # Vertical offset
+    size  = 3,                                    # Text size
+    color = "gray30"                              # Label color
+  ) +
+  labs(
+    title    = "MPG Trend Across Cars",           # Plot title
+    subtitle = "Data: mtcars dataset",            # Subtitle
+    x        = "Car Index",                       # X-axis label
+    y        = "Miles per Gallon",                # Y-axis label
+    caption  = "Line chart with point and label diagnostics" # Caption
+  ) +
+  theme_minimal()                                 # Minimal theme

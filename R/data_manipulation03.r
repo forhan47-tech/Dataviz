@@ -1,4 +1,6 @@
-# Create two sample data frames
+# Basic R Script: Data Manipulation
+
+# First data frame
 df1 <- data.frame(
   id = c(101, 102, 103),
   name = c("A", "B", "C"),
@@ -6,6 +8,7 @@ df1 <- data.frame(
   passed = c(TRUE, TRUE, FALSE)
 )
 
+# Second data frame
 df2 <- data.frame(
   id = c(102, 103, 104),
   age = c(23, 25, 22)
