@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{graphs} % load graphs library
+
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Mixed graph: undirected + directed edges ---
+  \graph [nodes={draw, circle, fill=orange!20},
+          edges={thick}] {
+    A -- B -> C -- D -> E;
+  };
+
+\end{tikzpicture}
+
+\end{document}

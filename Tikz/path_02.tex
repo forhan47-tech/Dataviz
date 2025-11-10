@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1]
+
+  % --- Rectangle path ---
+  \draw[blue, thick] (0,0) rectangle (2,1);
+  \node[below] at (1,0) {Rectangle};
+
+  % --- Circle path ---
+  \draw[red, thick, fill=red!20] (5,0) circle (1);
+  \node[below] at (5,-1.2) {Circle};
+
+  % --- Ellipse path ---
+  \draw[green, thick, dashed] (9,0) ellipse (1.5 and 0.75);
+  \node[below] at (9,-1) {Ellipse};
+
+  % --- Grid path ---
+  \draw[orange, thick] (12,0) grid (14,2);
+  \node[below] at (13,0) {Grid};
+
+\end{tikzpicture}
+
+\end{document}

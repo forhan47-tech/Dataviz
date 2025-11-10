@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Global style ---
+  \draw[thick] (0,0) -- (2,0);
+
+  % --- Local scope with blue color + dashed lines ---
+  \begin{scope}[blue, dashed]
+    \draw (0,1) -- (2,1);
+    \draw (0,2) -- (2,2);
+  \end{scope}
+
+  % --- Back to normal (global style again) ---
+  \draw[thick] (0,3) -- (2,3);
+  
+\end{tikzpicture}
+
+\end{document}

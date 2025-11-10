@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+% Define a global style for all paths
+\tikzset{
+  every path/.style={thick, dashed, red}
+}
+
+\begin{tikzpicture}
+  % Both lines use the global path style
+  \draw (0,0) -- (2,0);
+  \draw (0,1) -- (2,1);
+
+  % Local override: dotted blue line
+  \draw[dotted, blue] (0,2) -- (2,2);
+\end{tikzpicture}
+
+\end{document}

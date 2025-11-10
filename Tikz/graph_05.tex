@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{graphs}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Branching graph ---
+  \graph[nodes={circle, draw, fill=blue!20}, edges={->, thick}] {
+    A -> {B, C, D};   
+  };
+
+\end{tikzpicture}
+
+\end{document}

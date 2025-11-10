@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}[scale=1]
+
+  % --- Plain node ---
+  \node at (0,0) {Plain Node};
+
+  % --- Node with border ---
+  \node[draw] at (3,0) {Bordered Node};
+
+  % --- Node with border + fill ---
+  \node[draw, fill=blue!20] at (6,0) {Filled Node};
+
+  % --- Node with shape + style ---
+  \node[draw, circle, fill=red!30, text=white, font=\bfseries] 
+    at (9,0) {Styled};
+
+\end{tikzpicture}
+
+\end{document}

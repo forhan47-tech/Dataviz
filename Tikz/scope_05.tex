@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Original square ---
+  \draw (0,0) rectangle (1,1);
+
+  % --- Uniform scaling (same factor for x and y) ---
+  \begin{scope}[scale=2]
+    \draw[red] (2,0) rectangle (3,1);
+  \end{scope}
+
+  % --- Non-uniform scaling (different factors for x and y) ---
+  \begin{scope}[xscale=2, yscale=0.5]
+    \draw[blue] (4,0) rectangle (5,1);
+  \end{scope}
+
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Original square ---
+  \draw (0,0) rectangle (1,1);
+
+  % --- Using shift={(x,y)} inside scope ---
+  \begin{scope}[shift={(3,0)}]
+    \draw[red] (0,0) rectangle (1,1);
+  \end{scope}
+
+  % --- Using xshift(moved right) ---
+  \begin{scope}[xshift=3cm]
+    \draw[blue] (0,0) rectangle (1,1);
+  \end{scope}
+
+  % --- Using yshift(moved up) ---
+  \begin{scope}[yshift=2cm]
+    \draw[green] (0,0) rectangle (1,1);
+  \end{scope}
+
+\end{tikzpicture}
+
+\end{document}

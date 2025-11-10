@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+% Define a global style for all nodes
+\tikzset{
+    every node/.style={draw, circle, fill=blue!20}
+}
+
+\begin{tikzpicture}
+  \node at (0,0) {A};
+  \node at (2,0) {B};
+  \node at (4,0) {C};
+\end{tikzpicture}
+
+\end{document}

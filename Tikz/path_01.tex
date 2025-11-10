@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}[scale=1]
+
+  % --- open path ---
+  \draw[blue, thick] (0,0) -- (2,0);
+  \node[below] at (1,0) {Open Path};
+
+  % --- Closed path ---
+  \draw[red, thick] (3,0) -- (4,1.5) -- (5,0) -- cycle;
+  \node[below] at (4,0) {Closed Path};
+
+  % --- Curved path (Bezier) ---
+  \draw[green, thick] (6,0) .. controls (7,2) and (9,-2) .. (10,0);
+  \node[below] at (8,0) {Curve};
+
+  % --- Arc path ---
+  \draw[orange, thick, ->] (12,0) arc(0:180:1.5);
+  \node[below] at (13.5,0) {Arc};
+
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+  % Nested loops: rows and columns
+  \foreach \x in {0,1,...,4} {
+    \foreach \y in {0,1,...,4} {
+      \node[draw, circle, fill=blue!20] at (\x,\y) {};
+    }
+  }
+
+\end{tikzpicture}
+
+\end{document}

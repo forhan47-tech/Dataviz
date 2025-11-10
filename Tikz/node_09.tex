@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{positioning} % for pinning
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1]
+
+  % --- Node with label ---
+  \node[draw, circle, label=right:Label] (A) at (0,0) {A};
+
+  % --- Node with multiple labels ---
+  \node[draw, rectangle, label=above:Top, label=below:Bottom] (B) at (3,0) {B};
+
+  % --- Node with pinned label ---
+  \node[draw, ellipse, pin=45:Pinned Label] (C) at (6,0) {C};
+
+\end{tikzpicture}
+
+\end{document}

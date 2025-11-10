@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{positioning} % enables relative positioning
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1]
+
+  % --- Base node ---
+  \node[draw, circle] (A) {A};
+
+  % --- Node placed right of A ---
+  \node[draw, rectangle, right=of A] (B) {B};
+
+  % --- Node placed above A ---
+  \node[draw, ellipse, above=of A] (C) {C};
+
+  % --- Node placed below B with extra distance ---
+  \node[draw, diamond, below=1.5cm of B] (D) {D};
+
+  % --- Connect nodes ---
+  \draw[->] (A) -- (B);
+  \draw[->] (A) -- (C);
+  \draw[->] (B) -- (D);
+
+\end{tikzpicture}
+
+\end{document}

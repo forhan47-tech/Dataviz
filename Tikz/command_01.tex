@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}[scale=1]
+
+  % --- Simple line (default options) ---
+  \draw (0,0) -- (2,0);
+
+  % --- Line with color and thickness ---
+  \draw[blue, thick] (0,1) -- (2,1);
+
+  % --- Line with dashed style ---
+  \draw[red, dashed] (0,2) -- (2,2);
+
+  % --- Polyline (multiple segments) ---
+  \draw[green, thick] (0,3) -- (1,4) -- (2,3);
+
+  % --- Closed path (triangle) ---
+  \draw[orange, thick] (0,5) -- (1,6) -- (2,5) -- cycle;
+
+\end{tikzpicture}
+
+\end{document}

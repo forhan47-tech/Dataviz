@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{graphs}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Nested branching graph ---
+  \graph [nodes={circle, draw, fill=blue!20}, edges={thick}] {
+    A -> {B -> {C, D}, E};
+  };
+
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{graphs}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Define reusable styles ---
+  \tikzset{
+    myNode/.style={circle, draw, fill=blue!20},
+    myEdge/.style={thick, red}
+  }
+
+  % --- Graph with styles applied ---
+  \graph[nodes=myNode, edges=myEdge] {
+    A -> B -> C -> D;
+    A -> E;
+  };
+
+\end{tikzpicture}
+
+\end{document}

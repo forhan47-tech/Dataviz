@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Original rectangle ---
+  \draw (0,0) rectangle (2,1);
+
+  % --- Mirrored across the y-axis (horizontal flip) ---
+  \begin{scope}[xscale=-1]
+    \draw[red] (0,0) rectangle (2,1);
+  \end{scope}
+
+  % --- Mirrored across the x-axis (vertical flip) ---
+  \begin{scope}[yscale=-1]
+    \draw[blue] (3,0) rectangle (4,1);
+  \end{scope}
+
+  % --- Mirrored across both axes (180° rotation effect) ---
+  \begin{scope}[xscale=-1, yscale=-1]
+    \draw[green] (4,0) rectangle (5,1);
+  \end{scope}
+
+\end{tikzpicture}
+
+\end{document}

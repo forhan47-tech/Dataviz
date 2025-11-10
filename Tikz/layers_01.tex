@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds} % for layer support
+
+\begin{document}
+
+% --- Define layers and their order ---
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\begin{tikzpicture}
+
+  % --- Main layer (default) ---
+  \node[draw, circle, fill=blue!20] (A) at (0,0) {A};
+  \node[draw, circle, fill=blue!20] (B) at (2,0) {B};
+
+  % --- Background layer ---
+  \begin{pgfonlayer}{background}
+    \draw[fill=yellow!30] (-1,-1) rectangle (3,1);
+  \end{pgfonlayer}
+
+  % --- Foreground layer ---
+  \begin{pgfonlayer}{foreground}
+    \draw[red, ultra thick, ->] (A) -- (B);
+  \end{pgfonlayer}
+
+\end{tikzpicture}
+
+\end{document}

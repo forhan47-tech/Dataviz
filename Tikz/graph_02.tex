@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{graphs} % load graphs library
+
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Undirected chain graph ---
+  \graph [nodes={draw, circle, fill=blue!20}, edges={thick}] {
+    A -- B -- C -- D -- E;
+  };
+  
+\end{tikzpicture}
+
+\end{document}
