@@ -1,16 +1,13 @@
 \documentclass{article}
 \usepackage{tikz}
-\usetikzlibrary{graphs} % load graphs library
+\usetikzlibrary{graphs} % load the graphs library
 
 \begin{document}
 
-\begin{tikzpicture}
+% --- Undirected graph ---
+\tikz[node distance=3cm] \graph[nodes={draw,circle}] { A -- B };
 
-  % --- Undirected chain graph ---
-  \graph [nodes={draw, circle, fill=blue!20}, edges={thick}] {
-    A -- B -- C -- D -- E;
-  };
-  
-\end{tikzpicture}
+% --- Directed graph ---
+\tikz \graph[nodes={draw,circle}] { A -> B };
 
 \end{document}

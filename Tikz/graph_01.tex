@@ -1,14 +1,19 @@
 \documentclass{article}
 \usepackage{tikz}
-\usetikzlibrary{graphs}
 
 \begin{document}
-
 \begin{tikzpicture}
 
-  % --- Basic chain graph ---
-  \graph { A -> B -> C -> D };
+  % --- Nodes ---
+  \node[draw, circle] (A) at (0,0) {A};
+  \node[draw, circle] (B) at (2,0) {B};
 
+  % --- Edges ---
+  % Undirected edge
+  \draw (A) -- (B);
+
+  % Directed edge
+  \draw[->] (A) -- (B);
+  
 \end{tikzpicture}
-
 \end{document}

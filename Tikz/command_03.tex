@@ -4,17 +4,14 @@
 
 \begin{tikzpicture}[scale=1]
 
-  % --- Filled rectangle with outline ---
-  \filldraw[fill=blue!30, draw=blue, thick]
-    (0,0) rectangle (2,1);
+  % --- Filled + outlined rectangle ---
+  \filldraw[fill=blue!30, draw=blue, thick] (0,0) rectangle (2,1);
 
-  % --- Filled circle with outline ---
-  \filldraw[fill=red!40, draw=black, ultra thick]
-    (5,0) circle (1);
+  % --- Filled + outlined circle ---
+  \filldraw[fill=red!40!white, draw=red, thick] (5,0) circle (1);
 
-  % --- Filled triangle with dashed border ---
-  \filldraw[fill=green!20, draw=purple, dashed]
-    (8,0) -- (9,1.5) -- (10,0) -- cycle;
+  % --- Filled + outlined triangle ---
+  \filldraw[fill=green!30, draw=green, thick] (8,0) -- (9,1.5) -- (10,0) -- cycle;
 
 \end{tikzpicture}
 

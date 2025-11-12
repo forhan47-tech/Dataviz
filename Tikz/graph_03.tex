@@ -1,17 +1,11 @@
-\documentclass{article}
+\documentclass{standalone}
 \usepackage{tikz}
-\usetikzlibrary{graphs} % load graphs library
+\usetikzlibrary{graphs} % load the graphs library
 
 \begin{document}
+% --- Undirected triangle graph ---
+\tikz \graph[nodes={draw,circle}] { A -- B -- C -- A };
 
-\begin{tikzpicture}
-
-  % --- Directed chain graph ---
-  \graph [nodes={draw, circle, fill=green!20},
-          edges={thick}] {
-    A -> B -> C -> D -> E;
-  };
-
-\end{tikzpicture}
-
+% --- Directed triangle graph ---
+\tikz \graph[nodes={draw,circle}] { A -> B -> C -> A };
 \end{document}

@@ -1,28 +1,24 @@
 \documentclass{article}
 \usepackage{tikz}
-\usetikzlibrary{positioning} % enables relative positioning
+\usetikzlibrary{positioning} % Enables relative positioning
 
 \begin{document}
-
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[node distance=1.2cm and 1.5cm] % vertical and horizontal spacing
 
   % --- Base node ---
-  \node[draw, circle] (A) {A};
+  \node[circle, draw] (A) {A};
 
-  % --- Node placed right of A ---
-  \node[draw, rectangle, right=of A] (B) {B};
+  % --- Node placed to the right of A ---
+  \node[circle, draw, right=of A] (B) {B};
 
   % --- Node placed above A ---
-  \node[draw, ellipse, above=of A] (C) {C};
+  \node[circle, draw, above=of A] (C) {C};
 
-  % --- Node placed below B with extra distance ---
-  \node[draw, diamond, below=1.5cm of B] (D) {D};
+  % --- Node placed below B with custom vertical distance ---
+  \node[circle, draw, below=1.5cm of B] (D) {D};
 
-  % --- Connect nodes ---
-  \draw[->] (A) -- (B);
-  \draw[->] (A) -- (C);
-  \draw[->] (B) -- (D);
+  % --- Node placed below left of A with custom offsets ---
+  \node[circle, draw, below left=1.5cm and 2cm of A] (E) {E};
 
 \end{tikzpicture}
-
 \end{document}

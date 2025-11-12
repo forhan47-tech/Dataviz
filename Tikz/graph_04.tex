@@ -1,17 +1,10 @@
-\documentclass{article}
-\usepackage{tikz}
-\usetikzlibrary{graphs} % load graphs library
+\graph[nodes={draw,circle}] { A -> B -> C -> D };
 
-\begin{document}
+% Path P4
+\graph[nodes={draw,circle}] { subgraph I_n [n=4] };
 
-\begin{tikzpicture}
-
-  % --- Mixed graph: undirected + directed edges ---
-  \graph [nodes={draw, circle, fill=orange!20},
-          edges={thick}] {
-    A -- B -> C -- D -> E;
-  };
-
+% Cycle C5
+\graph[nodes={draw,circle}, circular placement, radius=1cm] { subgraph C_n [n=5] };
 \end{tikzpicture}
 
 \end{document}
