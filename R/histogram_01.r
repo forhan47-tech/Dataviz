@@ -5,19 +5,13 @@
 # ─────────────────────────────────────────────────────────────
 
 # Step 1: Generate histogram and capture diagnostics
-h <- hist(mtcars$mpg,                         # Data: Miles per Gallon
+hist(mtcars$mpg,                         # Data: Miles per Gallon
+  breaks   = 20,                              # Number of bins
   main     = "MPG Distribution",              # Plot title
   sub      = "Data: mtcars dataset",          # Subtitle
   xlab     = "Miles per Gallon",              # X-axis label
   ylab     = "Frequency",                     # Y-axis label
-  xlim     = range(mtcars$mpg),               # X-axis limits
-  ylim     = NULL,                            # Auto Y-axis limits
-  breaks   = 20,                              # Number of bins
-  col      = "lightblue",                     # Fill color
-  border   = "black",                         # Border color
-  labels   = TRUE,                            # Show bin counts
-  freq     = TRUE                             # Frequency counts
+  col      = "lightblue",                   # Fill color
+  border   = "black",                       # Border color
+  freq     = TRUE                            # Frequency counts
 )
-
-# Step 2: Overlay density curve
-lines(density(mtcars$mpg), col = "red", lwd = 2)

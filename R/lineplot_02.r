@@ -14,18 +14,18 @@ mtcars$car_index <- seq_along(mtcars$mpg)  # Sequence from 1 to number of cars
 ggplot(mtcars, aes(x = car_index, y = mpg)) +
   geom_line(
     color     = "steelblue",                      # Line color
-    lwd       = 1.5                                 # Line width
+    linewidth       = 1.5                           # Line width
   ) +
   geom_point(
     color = "darkorange",                         # Point color
-    size  = 3,                                    # Point size
-    shape = 16                                    # Solid circle
+    size  = 2,                                      # Point size
+    shape = 16                                      # Solid circle
   ) +
   geom_text(
-    aes(label = rownames(mtcars)),          # Car names as labels
+    aes(label = rownames(mtcars)),                # Car names as labels
     vjust = -0.8,                                 # Vertical offset
     size  = 3,                                    # Text size
-    color = "gray30"                              # Label color
+    color = "gray30"                            # Label color
   ) +
   labs(
     title    = "MPG Trend Across Cars",           # Plot title

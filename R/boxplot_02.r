@@ -15,7 +15,6 @@ ggplot(mtcars, aes(x = "", y = mpg)) +
     notch    = FALSE,        # No notch
     outlier.colour = "red",  # Outlier color
     outlier.shape  = 16,     # Outlier point shape
-    outlier.size   = 2       # Outlier point size
   ) +
   labs(
     title    = "Boxplot of MPG",

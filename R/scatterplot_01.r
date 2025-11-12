@@ -7,18 +7,16 @@
 # Step 1: Generate scatter plot
 plot(mtcars$wt, mtcars$mpg,
   main  = "MPG vs Weight",                    # Plot title
-  sub   = "Data: mtcars dataset",           # Subtitle
+  sub   = "Data: mtcars dataset",             # Subtitle
   xlab  = "Weight (1000 lbs)",                # X-axis label
   ylab  = "Miles per Gallon",                 # Y-axis label
-  xlim  = range(mtcars$wt),                   # X-axis limits
-  ylim  = range(mtcars$mpg),                  # Y-axis limits
-  col   = factor(mtcars$cyl),              # Color by number of cylinders
+  col   = factor(mtcars$cyl),                 # Color by number of cylinders
   pch   = 19,                                 # Solid circle
-  cex   = 1.5                                 # Point size
+  cex   = 1                                   # Point size
 )
 
 # Step 2: Fit and add regression line
-model <- lm(mpg ~ wt, data = mtcars)
+model <- lm(mpg ~ wt, mtcars)
 abline(model, col = "red", lwd = 2)           # Regression line
 
 # Step 3: Annotate data points with car names

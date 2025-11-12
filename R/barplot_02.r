@@ -12,7 +12,6 @@ ggplot(mtcars, aes(x = factor(cyl))) +
   geom_bar(
     fill  = "steelblue",     # Bar fill color
     color = "black",         # Border color
-    width = 0.7              # Bar width
   ) +
   labs(
     title    = "Frequency of Cylinders",

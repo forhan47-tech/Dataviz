@@ -1,43 +1,26 @@
 # ─────────────────────────────────────────────────────────────
-# 🥧 ggplot2 Pie Chart Diagnostic Script (Fully Parameterized)
+# 🥧 ggplot2 Pie Chart Diagnostic Script
 # Author: NAIMUDDIN
-# Purpose: Visualize category proportions with percentage labels
+# Purpose: Visualize car count by cylinder using ggplot2
 # ─────────────────────────────────────────────────────────────
 
-# Load ggplot2 library for visualization
+# Step 0: Load ggplot2 library
 library(ggplot2)
 
-# Step 1: Define category-value data frame
-df <- data.frame(
-  category = c("A", "B", "C", "D"),   # Category labels
-  value    = c(25, 40, 27, 8)         # Corresponding values
-)
+# Step 1: Create frequency table of cylinder counts
+cyl_counts <- as.data.frame(table(mtcars$cyl))
+colnames(cyl_counts) <- c("cyl", "count")
 
-# Step 2: Compute percentage labels for each category
-df$percent <- round(df$value / sum(df$value) * 100)
-
-# Step 3: Generate pie chart with percentage diagnostics
-ggplot(df, aes(x = "", y = value, fill = category)) +
+# Step 2: Generate pie chart
+ggplot(cyl_counts, aes(x = "", y = count, fill = factor(cyl))) +
   geom_bar(
-    stat  = "identity",               # Use actual values
-    width = 1,                        # Full pie width
-    color = "black"                   # Border color for slices
+    stat   = "identity",   # Use actual counts
+    color  = "black"       # Border color
   ) +
-  coord_polar(
-    theta     = "y",                  # Convert bar chart to pie chart
-    start     = 0,                    # Start angle
-    direction = -1                    # Clockwise rotation
-  ) +
-  geom_text(
-    aes(label = percent),            # Display percentage labels
-    position = position_stack(vjust = 0.5),  # Center labels in slices
-    size     = 4,                    # Label font size
-    color    = "white"               # Label color for contrast
-  ) +
+  coord_polar(theta = "y") +  # Convert bar chart to pie chart
   labs(
-    title    = "Pie Chart: Category Proportions",         # Main title
-    subtitle = "Data: Custom category dataset",           # Subtitle
-    fill     = "Category",                                # Legend title
-    caption  = "Pie chart using coord_polar"              # Footer caption
+    title    = "Car Count by Cylinder",          # Plot title
+    subtitle = "Data Source: mtcars dataset",    # Subtitle
+    caption  = "Pie chart using ggplot2 (coord_polar)" # Caption
   ) +
-  theme_void()
+  theme_minimal()                                # Minimal theme for clarity

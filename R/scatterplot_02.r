@@ -18,7 +18,7 @@ ggplot(data = mtcars, aes(x = wt, y = mpg)) +
   geom_text(
     aes(label = rownames(mtcars)),              # Car names
     hjust = 0.5, vjust = -1,                    # Positioning
-    size = 3, color = "darkgray"                # Annotation style
+    size = 3, color = "darkgray"              # Annotation style
   ) +
   labs(
     title    = "MPG vs Weight",                 # Plot title
