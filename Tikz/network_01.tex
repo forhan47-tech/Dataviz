@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{tikz-network} % load tikz-network package
+
+\begin{document}
+
+\begin{tikzpicture}
+  % --- Vertices ---
+  \Vertex[x=0,y=0]{A}
+  \Vertex[x=2,y=0]{B}
+  \Vertex[x=1,y=1.5]{C}
+
+  % --- Edges ---
+  \Edge[label=3](A)(B)          % undirected edge with weight
+  \Edge[Direct,label=5](B)(C)   % directed edge with weight
+  \Edge[Direct,label=2](C)(A)   % directed edge with weight
+\end{tikzpicture}
+
+\end{document}

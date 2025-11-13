@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{graphs,positioning} % graphs for structure, positioning for relative placement
+
+\begin{document}
+
+\begin{tikzpicture}
+  \graph[nodes={draw,circle}, edges={-}] {
+    A;
+    B [below left=of A];
+    C [below right=of A];
+    A -> {B, C};
+  };
+\end{tikzpicture}
+
+\end{document}

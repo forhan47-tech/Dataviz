@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{tikz-network}
+
+\begin{document}
+
+\begin{tikzpicture}[
+  VertexStyle/.style={circle,minimum size=0.8cm,draw,color=blue!20},
+  EdgeStyle/.style={thick} % only TikZ line styles here
+]
+  % --- Vertices ---
+  \Vertex[x=0,y=0]{A}
+  \Vertex[x=2,y=0,color=red!50]{B}
+  \Vertex[x=1,y=1.5,color=green!50]{C}
+
+  % --- Edges ---
+  \Edge[Direct,label=3,style={dashed},color=blue!70](A)(B)
+  \Edge[Direct,label=5,color=red!70](B)(C)
+  \Edge[Direct,label=2,style={dotted},color=green!70](C)(A)
+\end{tikzpicture}
+
+\end{document}

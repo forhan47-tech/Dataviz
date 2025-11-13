@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{tikz-network}
+
+\begin{document}
+
+\begin{tikzpicture}
+  % --- Vertices with styles ---
+  \Vertex[x=0,y=0,size=0.8,color=blue!50,shape=circle]{A}
+  \Vertex[x=2,y=0,size=0.8,color=red!50,shape=circle]{B}
+  \Vertex[x=1,y=1.5,size=0.8,color=green!50,shape=circle]{C}
+
+  % --- Edges with styles ---
+  \Edge[Direct,label=3,color=blue!70,style={thick,dashed}](A)(B)
+  \Edge[Direct,label=5,color=red!70,style={thick}](B)(C)
+  \Edge[Direct,label=2,color=green!70,style={thick,dotted}](C)(A)
+\end{tikzpicture}
+
+\end{document}

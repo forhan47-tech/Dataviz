@@ -1,0 +1,13 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+  % --- Root with two children ---
+  \node[draw, circle] {A}
+    child { node[draw, circle] {B} }
+    child { node[draw, circle] {C} };
+\end{tikzpicture}
+
+\end{document}
