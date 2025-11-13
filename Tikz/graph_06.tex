@@ -1,16 +1,14 @@
 \documentclass{article}
 \usepackage{tikz}
-\usetikzlibrary{graphs}
+\usetikzlibrary{graphs,positioning} % add positioning library
 
 \begin{document}
 
+% --- Directed chain path using graphs with relative positioning ---
 \begin{tikzpicture}
-
-  % --- Nested branching graph ---
-  \graph [nodes={circle, draw, fill=blue!20}, edges={thick}] {
-    A -> {B -> {C, D}, E};
+  \graph[nodes={draw,circle}, edges={->}] {
+    A -> B -> C -> D;
   };
-
 \end{tikzpicture}
 
 \end{document}

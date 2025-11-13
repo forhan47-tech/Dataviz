@@ -8,7 +8,7 @@
 library(ggplot2)
 
 # Step 1: Generate scatter plot with regression and annotation
-ggplot(data = mtcars, aes(x = wt, y = mpg)) +
+ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_point(
     color = mtcars$cyl, size = 3, shape = 16        # Data points
   ) +

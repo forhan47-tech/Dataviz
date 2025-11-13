@@ -8,14 +8,15 @@
   % --- Root node ---
   \node (A) {A};
 
-  % --- Other nodes placed relative to A ---
-  \node (B) [right=of A] {B};
-  \node (C) [above=of B] {C};
+  % --- Branch nodes placed relative to A ---
+  \node (B) [below left=of A] {B};
+  \node (C) [below=of A] {C};
+  \node (D) [below right=of A] {D};
 
-  % --- Directed cycle edges ---
+  % --- Branching edges ---
   \draw[->] (A) -- (B);
-  \draw[->] (B) -- (C);
-  \draw[->] (C) -- (A);
+  \draw[->] (A) -- (C);
+  \draw[->] (A) -- (D);
 \end{tikzpicture}
 
 \end{document}

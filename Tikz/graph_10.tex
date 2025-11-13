@@ -6,13 +6,16 @@
 
 \begin{tikzpicture}
   \graph[nodes={draw,circle}, edges={->}] {
-    % --- Nodes with relative placement ---
+    % --- Root node ---
     A;
-    B [right=of A];
-    C [above=5cm of B];
 
-    % --- Cycle edges ---
-    A -> B -> C -> A;
+    % --- Branch nodes placed relative to A ---
+    B [below left=of A];
+    C [below=of A];
+    D [below right=of A];
+
+    % --- Branching edges ---
+    A -> {B, C, D};
   };
 \end{tikzpicture}
 

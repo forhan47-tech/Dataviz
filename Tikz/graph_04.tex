@@ -1,10 +1,14 @@
-\graph[nodes={draw,circle}] { A -> B -> C -> D };
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{graphs,quotes,positioning} % graphs for structure, quotes for labels, positioning for relative placement
 
-% Path P4
-\graph[nodes={draw,circle}] { subgraph I_n [n=4] };
+\begin{document}
 
-% Cycle C5
-\graph[nodes={draw,circle}, circular placement, radius=1cm] { subgraph C_n [n=5] };
+% --- Simple weighted edge using graphs ---
+\begin{tikzpicture}
+  \graph[nodes={draw,circle}, edges={->}] {
+    A ->["3"] B;
+  };
 \end{tikzpicture}
 
 \end{document}

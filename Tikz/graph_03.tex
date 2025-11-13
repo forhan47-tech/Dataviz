@@ -1,11 +1,17 @@
-\documentclass{standalone}
+\documentclass{article}
 \usepackage{tikz}
-\usetikzlibrary{graphs} % load the graphs library
+\usetikzlibrary{positioning} % enables relative placement
 
 \begin{document}
-% --- Undirected triangle graph ---
-\tikz \graph[nodes={draw,circle}] { A -- B -- C -- A };
 
-% --- Directed triangle graph ---
-\tikz \graph[nodes={draw,circle}] { A -> B -> C -> A };
+% --- Simple weighted edge without graphs ---
+\begin{tikzpicture}
+  % --- Nodes ---
+  \node[draw, circle] (A) {A};
+  \node[draw, circle, right=of A] (B) {B};
+
+  % --- Weighted directed edge ---
+  \draw[->] (A) -- node[above] {3} (B);
+\end{tikzpicture}
+
 \end{document}
