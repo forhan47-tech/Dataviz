@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for including graphics
+
+\begin{document}
+
+\section{Figure Environment}
+
+% --- Single Figure Example ---
+\begin{figure}[h] % h = here placement
+\centering
+\includegraphics[width=0.6\textwidth]{example-image} % image file
+\caption{Sample figure with caption}
+\label{fig:sample}
+\end{figure}
+
+As shown in Figure~\ref{fig:sample}, the diagram illustrates the concept.
+
+% --- Multiple Figures Example (side by side) ---
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\centering
+\includegraphics[width=\textwidth]{example-image-a}
+\caption{First figure}
+\label{fig:first}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\centering
+\includegraphics[width=\textwidth]{example-image-b}
+\caption{Second figure}
+\label{fig:second}
+\end{minipage}
+\end{figure}
+
+Figures~\ref{fig:first} and \ref{fig:second} show two related diagrams side by side.
+
+\end{document}
