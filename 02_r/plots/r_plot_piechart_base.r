@@ -1,9 +1,3 @@
-# ─────────────────────────────────────────────────────────────
-# 🥧 Base R Pie Chart Diagnostic Script (Counts + Percentages)
-# Author: NAIMUDDIN
-# Purpose: Visualize car count by cylinder with count + percentage labels
-# ─────────────────────────────────────────────────────────────
-
 # Step 1: Create frequency table of cylinder counts
 cyl_counts <- table(mtcars$cyl)
 

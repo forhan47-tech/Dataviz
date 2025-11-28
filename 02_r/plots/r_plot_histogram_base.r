@@ -1,9 +1,3 @@
-# ─────────────────────────────────────────────────────────────
-# 📊 Base R Histogram Diagnostic Script
-# Author: NAIMUDDIN
-# Purpose: Visualize MPG distribution with diagnostics
-# ─────────────────────────────────────────────────────────────
-
 # Step 1: Generate histogram and capture diagnostics
 hist(mtcars$mpg,                         # Data: Miles per Gallon
   breaks   = 20,                              # Number of bins

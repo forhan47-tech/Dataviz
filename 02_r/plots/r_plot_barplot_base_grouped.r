@@ -1,9 +1,3 @@
-# ─────────────────────────────────────────────────────────────
-# 📊 Base R Grouped Bar Plot Diagnostic Script
-# Author: NAIMUDDIN
-# Purpose: Visualize counts of cylinders vs gears using grouped bars
-# ─────────────────────────────────────────────────────────────
-
 # Step 1: Create contingency table (cylinders × gears)
 cyl_gear_table <- table(mtcars$cyl, mtcars$gear)
 

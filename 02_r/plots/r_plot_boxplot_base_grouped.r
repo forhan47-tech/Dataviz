@@ -1,9 +1,3 @@
-# ─────────────────────────────────────────────────────────────
-# 📦 Base R Boxplot Diagnostic Script
-# Author: NAIMUDDIN
-# Purpose: Visualize MPG by cylinder with manifest logging and outlier detection
-# ─────────────────────────────────────────────────────────────
-
 # Step 1: Vertical boxplot (standard)
 boxplot(mpg ~ factor(cyl), mtcars,                # Source dataset
   main      = "MPG by Cylinder",                  # Plot title

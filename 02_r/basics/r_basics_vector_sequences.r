@@ -1,5 +1,3 @@
-# Basic R Script: Vectors
-
 # Using the colon operator to create sequences
 vec1 <- 1:5
 print(vec1)

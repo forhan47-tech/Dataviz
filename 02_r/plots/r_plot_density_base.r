@@ -1,9 +1,3 @@
-# ─────────────────────────────────────────────────────────────
-# 📈 Base R Density Plot Diagnostic Script
-# Author: NAIMUDDIN
-# Purpose: Visualize MPG distribution using density plot
-# ─────────────────────────────────────────────────────────────
-
 # Step 1: Generate density object
 df <- density(mtcars$mpg)   # Kernel density estimate of Miles per Gallon
 
