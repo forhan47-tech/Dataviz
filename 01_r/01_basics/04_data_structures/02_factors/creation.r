@@ -1,7 +1,7 @@
 # Create factor
-gender <- factor(c("Male", "Female", "Male", "Female", "Male"))
-print(gender)
+fct <- factor(c("Male", "Female", "Male", "Female", "Male"))
+print(fct)
 
 # Show levels
-print(levels(gender))   # list categories
-print(nlevels(gender))  # number of categories
+print(levels(fct))   # list categories
+print(nlevels(fct))  # number of categories

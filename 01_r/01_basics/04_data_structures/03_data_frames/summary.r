@@ -1,15 +1,15 @@
 # Data Frame Summary
-students <- data.frame(
+df <- data.frame(
   name = c("A", "B", "C"),
   score = c(85, 90, 78),
   passed = c(TRUE, TRUE, FALSE)
 )
 
 # Summary statistics
-print(summary(students))
+print(summary(df))
 
 # Structure
-str(students)
+str(df)
 
 # Dimensions
-print(dim(students))
+print(dim(df))
