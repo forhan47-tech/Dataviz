@@ -1,5 +1,3 @@
-# Miscellaneous Operators
-
 # Sequence
 print(1:5)
 
