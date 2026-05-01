@@ -1,4 +1,5 @@
-"name","score","passed"
-"A",85,TRUE
-"B",90,TRUE
-"C",78,FALSE
+name,score,passed
+A,85,TRUE
+B,90,TRUE
+C,78,FALSE
+E,90,TRUE
