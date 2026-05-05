@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{positioning} % enables relative placement
+
+\begin{document}
+
+\begin{tikzpicture}[nodes={draw,circle}]
+  % --- Root node ---
+  \node (A) {A};
+
+  % --- Branch nodes placed relative to A ---
+  \node (B) [below left=of A] {B};
+  \node (C) [below=of A] {C};
+  \node (D) [below right=of A] {D};
+
+  % --- Branching edges ---
+  \draw[->] (A) -- (B);
+  \draw[->] (A) -- (C);
+  \draw[->] (A) -- (D);
+\end{tikzpicture}
+
+\end{document}

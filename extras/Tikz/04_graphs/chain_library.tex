@@ -1,0 +1,14 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{graphs,positioning} % add positioning library
+
+\begin{document}
+
+% --- Directed chain path using graphs with relative positioning ---
+\begin{tikzpicture}
+  \graph[nodes={draw,circle}, edges={->}] {
+    A -> B -> C -> D;
+  };
+\end{tikzpicture}
+
+\end{document}

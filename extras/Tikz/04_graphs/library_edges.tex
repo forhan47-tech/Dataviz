@@ -1,0 +1,13 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{graphs} % load the graphs library
+
+\begin{document}
+
+% --- Undirected graph ---
+\tikz \graph[nodes={draw,circle}] { A -- B };
+
+% --- Directed graph ---
+\tikz \graph[nodes={draw,circle}] { A -> B };
+
+\end{document}

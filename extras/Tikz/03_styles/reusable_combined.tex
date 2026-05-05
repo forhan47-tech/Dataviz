@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Define reusable styles ---
+  \tikzset{
+    base/.style={draw, thick},          % base style: border + thickness
+    highlight/.style={fill=yellow!30},  % highlight style: background fill
+    special/.style={base, highlight, dashed} % special style: combines base + highlight + dashed border
+  }
+
+  % --- Node using the combined style ---
+  \node[special, circle] at (0,0) {X};
+  
+\end{tikzpicture}
+
+\end{document}

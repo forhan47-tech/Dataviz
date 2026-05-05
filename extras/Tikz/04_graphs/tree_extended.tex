@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{graphs,positioning}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \graph[nodes={draw,circle}, edges={-}] {
+    A;
+    B [below left=of A];
+    C [below right=of A];
+    D [below left=of B];
+    E [below right=of B];
+    A -> {B, C};
+    B -> {D, E};
+  };
+\end{tikzpicture}
+
+\end{document}

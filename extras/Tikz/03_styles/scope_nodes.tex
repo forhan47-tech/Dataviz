@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Group a cluster of nodes with local style ---
+  \begin{scope}[every node/.style={draw, circle, fill=blue!20}]
+    \node at (0,0) {A};
+    \node at (2,0) {B};
+    \node at (1,1.5) {C};
+  \end{scope}
+
+  % --- Outside scope: plain node ---
+  \node at (4,0) {D};
+  
+\end{tikzpicture}
+
+\end{document}

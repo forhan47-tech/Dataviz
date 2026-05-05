@@ -1,0 +1,14 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{graphs,quotes,positioning} % graphs for structure, quotes for labels, positioning for relative placement
+
+\begin{document}
+
+% --- Simple weighted edge using graphs ---
+\begin{tikzpicture}
+  \graph[nodes={draw,circle}, edges={->}] {
+    A ->["3"] B;
+  };
+\end{tikzpicture}
+
+\end{document}

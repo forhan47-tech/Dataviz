@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{positioning} % enables relative placement
+
+\begin{document}
+
+% --- Simple weighted edge without graphs ---
+\begin{tikzpicture}
+  % --- Nodes ---
+  \node[draw, circle] (A) {A};
+  \node[draw, circle, right=of A] (B) {B};
+
+  % --- Weighted directed edge ---
+  \draw[->] (A) -- node[above] {3} (B);
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+
+  % --- Nodes ---
+  \node[draw, circle] (A) at (0,0) {A};
+  \node[draw, circle] (B) at (2,0) {B};
+
+  % --- Edges ---
+  % Undirected edge
+  \draw (A) -- (B);
+
+  % Directed edge
+  \draw[->] (A) -- (B);
+  
+\end{tikzpicture}
+\end{document}

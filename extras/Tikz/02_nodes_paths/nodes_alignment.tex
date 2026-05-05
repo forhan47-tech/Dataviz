@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}[scale=1]
+
+  % --- Centered text (default) ---
+  \node[draw, rectangle] at (0,0) {Centered};
+
+  % --- Left aligned text ---
+  \node[draw, rectangle, align=left] at (0,-2) {Left aligned\\Second line};
+
+  % --- Right aligned text ---
+  \node[draw, rectangle, align=right] at (0,-4) {Right aligned\\Second line};
+
+  % --- Justified text ---
+  \node[draw, rectangle, align=justify] at (0,-6) {This is a longer text that will be justified across the node width.};
+
+\end{tikzpicture}
+
+\end{document}

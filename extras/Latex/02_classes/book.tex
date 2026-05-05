@@ -1,0 +1,29 @@
+\documentclass[12pt]{book}      % Base document class: 'book' with 12pt font size
+
+% --- Body begins ---
+\begin{document}
+
+% --- Front matter setup ---
+\frontmatter                     % Roman page numbering (i, ii, iii…)
+\title{Sample Book}              % Sets the book title
+\author{NAIMUDDIN}               % Author name
+\date{\today}                    % Auto-inserts today's date
+\maketitle                       % Renders the title page
+
+\tableofcontents                 % Auto-generates table of contents
+
+% --- Main content begins ---
+\mainmatter                      % Switch to arabic page numbering (1, 2, 3…)
+\chapter{Introduction}           % Top-level division in 'book' class
+This is a book chapter.          % Chapter content
+
+\section{Background}             % Section nested under chapter
+Details inside the chapter.      % Section content
+
+% --- Back matter setup ---
+\backmatter                      % For appendices, bibliography, index, etc.
+\chapter{Appendix}               % Appendix chapter
+Extra material.                  % Appendix content
+
+% --- End of document ---
+\end{document}

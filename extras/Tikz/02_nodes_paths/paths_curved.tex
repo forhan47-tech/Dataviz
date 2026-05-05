@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+\begin{document}
+
+% Curved and routed path demo
+\begin{tikzpicture}
+
+  % --- Curved connectors ---
+  \draw[->] (0,0) to[bend left] (2,1);       % bend left
+  \draw[->] (0,1) to[bend right] (2,0);      % bend right
+  \draw[->] (2,1) to[out=0, in=180] (4,0);   % out/in angles
+
+  % --- Routed connectors ---
+  \draw[->] (0,-1.5) |- (2,-0.5);            % vertical then horizontal
+  \draw[->] (2,-0.5) -| (4,-1.5);            % horizontal then vertical
+
+\end{tikzpicture}
+
+\end{document}

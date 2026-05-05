@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Nodes ---
+  \node[draw] (A) at (0,0) {A};
+  \node[draw] (B) at (3,2) {B};
+  \node[draw] (C) at (3,-2) {C};
+
+  % --- Curved connectors ---
+  \draw[->, bend left]  (A) to (B);          % automatic curve (bend left)
+  \draw[->, bend right] (A) to (C);          % automatic curve (bend right)
+  \draw[->, out=0, in=180] (B) to (C);       % manual curvature with angles
+
+  % --- Routed connectors ---
+  \draw[->, thick, blue] (A) |- (C);         % vertical then horizontal
+  \draw[->, thick, red]  (A) -| (B);         % horizontal then vertical
+
+\end{tikzpicture}
+
+\end{document}

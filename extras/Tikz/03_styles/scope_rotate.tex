@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Original square ---
+  \draw (0,0) rectangle (1,1);
+
+  % --- Rotated square (around origin) ---
+  \begin{scope}[rotate=30]
+    \draw[red] (2,0) rectangle (3,1);
+  \end{scope}
+
+  % --- Rotated square (around a specific point) ---
+  \begin{scope}[rotate around={45:(5,0)}]
+    \draw[blue] (5,0) rectangle (6,1);
+  \end{scope}
+
+  % --- Rotated node ---
+  \node[draw, circle, rotate=20] at (8,0) {Rotated Text};
+
+\end{tikzpicture}
+
+\end{document}

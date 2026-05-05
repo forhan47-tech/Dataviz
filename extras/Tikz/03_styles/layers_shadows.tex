@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usetikzlibrary{shadows}       % simple shadows
+\usetikzlibrary{shadows.blur}  % blurred shadows
+
+\begin{document}
+
+\begin{tikzpicture}
+
+  % --- Simple drop shadow ---
+  \node[draw, fill=blue!20, drop shadow] at (0,0) {Simple Shadow};
+
+  % --- Blurred shadow ---
+  \node[draw, fill=green!20, blur shadow] at (4,0) {Blurred Shadow};
+
+\end{tikzpicture}
+
+\end{document}

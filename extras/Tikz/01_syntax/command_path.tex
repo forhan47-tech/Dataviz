@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}[scale=1]
+
+  % --- Path with draw option (like \draw) ---
+  \path[draw=blue, thick] (0,0) -- (2,0);
+
+  % --- Path with fill option (like \fill) ---
+  \path[fill=red!30] (3,0) -- (4,1.5) -- (5,0) -- cycle;
+
+  % --- Path with fill and draw (like \filldraw) ---
+  \path[fill=green!30, draw=green, thick] (7,0) circle (1);
+
+  % --- Path used for node placement (no drawing) ---
+  \path (9,0) node[draw, circle, fill=orange!30] {A};
+
+\end{tikzpicture}
+
+\end{document}
