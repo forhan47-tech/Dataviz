@@ -8,6 +8,6 @@ data <- data.frame(months, sales)
 
 # Basic line chart
 ggplot(data, aes(x = months, y = sales)) +
-  geom_line(color = "darkgreen", size = 1) +
+  geom_line(color = "darkgreen", linewidth = 1) +
   geom_point(color = "black", size = 3) +
   labs(title = "Monthly Sales Trend", x = "Month", y = "Sales")
